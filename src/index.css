@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-pink: #ec6a8f;
+  --color-lavender: #d98bc9;
+  --color-peach: #f4a08a;
+  --color-ink: #1e1e1e;
+  --color-ok: #6b946d;
+  --color-warn: #f2b134;
+  --color-alert: #d93636;
+
+  --color-pink-glass: rgba(236, 106, 143, 0.10);
+  --color-pink-border: rgba(236, 106, 143, 0.35);
+  --color-pink-hover: rgba(236, 106, 143, 0.06);
+  --color-lavender-glass: rgba(217, 139, 201, 0.10);
+
+  --font-sans: "Segoe UI", system-ui, Roboto, "Noto Sans", sans-serif;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  @apply bg-gradient-to-b from-[#FDEEF0] to-[#F9DCE3] min-h-dvh font-sans text-ink antialiased;
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-md rounded-[28px] p-5 shadow-sm border border-[#FDEEF0]/80;
+}
+
+.leaflet-map {
+  height: 320px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}

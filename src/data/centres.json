@@ -1,0 +1,98 @@
+[
+  {
+    "id": "c1",
+    "name": "Lotus Women's Clinic",
+    "lat": 28.5665,
+    "lng": 77.2102,
+    "type": "Government hospital",
+    "costRange": "Free",
+    "timings": "Mon–Sat 8:00 AM – 2:00 PM",
+    "phone": "+91 00000 00001",
+    "verified": true,
+    "services": ["Clinical breast exam", "Ultrasound", "Mammogram", "Biopsy"]
+  },
+  {
+    "id": "c2",
+    "name": "Asha Diagnostic Centre",
+    "lat": 28.5929,
+    "lng": 77.2069,
+    "type": "Government hospital",
+    "costRange": "Low cost",
+    "timings": "Mon–Sat 9:00 AM – 3:00 PM",
+    "phone": "+91 00000 00002",
+    "verified": true,
+    "services": ["Clinical breast exam", "Ultrasound", "Mammogram"]
+  },
+  {
+    "id": "c3",
+    "name": "Sunrise Maternity Hospital",
+    "lat": 28.5559,
+    "lng": 77.2545,
+    "type": "Private hospital",
+    "costRange": "₹₹₹",
+    "timings": "Mon–Sun 9:00 AM – 6:00 PM",
+    "phone": "+91 00000 00003",
+    "verified": true,
+    "services": ["Clinical breast exam", "Ultrasound", "Mammogram", "Biopsy"]
+  },
+  {
+    "id": "c4",
+    "name": "Hope Health Centre",
+    "lat": 28.6139,
+    "lng": 77.2090,
+    "type": "Private hospital",
+    "costRange": "₹₹₹",
+    "timings": "Mon–Sun 9:00 AM – 5:00 PM",
+    "phone": "+91 00000 00004",
+    "verified": true,
+    "services": ["Clinical breast exam", "Ultrasound", "Mammogram"]
+  },
+  {
+    "id": "c5",
+    "name": "Care Community Clinic",
+    "lat": 28.6330,
+    "lng": 77.2190,
+    "type": "Community clinic",
+    "costRange": "₹",
+    "timings": "Mon–Sat 10:00 AM – 4:00 PM",
+    "phone": "+91 00000 00005",
+    "verified": false,
+    "services": ["Clinical breast exam"]
+  },
+  {
+    "id": "c6",
+    "name": "Bright Diagnostic Centre",
+    "lat": 28.5900,
+    "lng": 77.2300,
+    "type": "Diagnostic centre",
+    "costRange": "₹₹",
+    "timings": "Mon–Sun 8:00 AM – 8:00 PM",
+    "phone": "+91 00000 00006",
+    "verified": true,
+    "services": ["Ultrasound", "Mammogram"]
+  },
+  {
+    "id": "c7",
+    "name": "New Life Hospital",
+    "lat": 28.5445,
+    "lng": 77.2785,
+    "type": "Private hospital",
+    "costRange": "₹₹₹",
+    "timings": "Mon–Sun 9:00 AM – 7:00 PM",
+    "phone": "+91 00000 00007",
+    "verified": true,
+    "services": ["Clinical breast exam", "Ultrasound", "Mammogram", "Biopsy"]
+  },
+  {
+    "id": "c8",
+    "name": "Neighbourhood Health Post",
+    "lat": 28.6600,
+    "lng": 77.2200,
+    "type": "Community clinic",
+    "costRange": "Free",
+    "timings": "Mon–Fri 9:00 AM – 1:00 PM",
+    "phone": "+91 00000 00008",
+    "verified": false,
+    "services": ["Clinical breast exam"]
+  }
+]
