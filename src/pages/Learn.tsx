@@ -83,143 +83,111 @@ export default function Learn() {
           ))}
         </div>
 
-        {/* Article - two columns at lg+ */}
-        <div className="lg:flex lg:gap-12">
-          {/* Left: sticky "On this page" sidebar */}
-          <aside className="hidden lg:block lg:w-[260px] lg:shrink-0">
-            <p className="text-xs font-semibold text-ink/50 uppercase tracking-wider mb-3">
-              {t('learn.onThisPage')}
-            </p>
-            <nav className="space-y-1.5">
-              {LEARN_SECTIONS.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    const el = document.getElementById(section.id)
-                    if (el) el.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm transition-colors ${
-                    activeId === section.id
-                      ? 'bg-brand-pink text-white'
-                      : 'text-ink/60 hover:bg-pink-hover hover:text-brand-pink'
-                  }`}
-                >
+        {/* Article - single centered reading column */}
+        <div className="max-w-prose mx-auto">
+          {LEARN_SECTIONS.map((section) => (
+            <section
+              key={section.id}
+              id={section.id}
+              ref={registerRef(section.id)}
+              className="mb-12"
+            >
+              <div className="space-y-4">
+                <h2 className="text-lg font-bold text-ink mb-3">
                   {section.title.en}
-                </button>
-              ))}
-            </nav>
-          </aside>
-
-          {/* Right: article content */}
-          <div className="flex-1 max-w-prose">
-            {LEARN_SECTIONS.map((section) => (
-              <section
-                key={section.id}
-                id={section.id}
-                ref={registerRef(section.id)}
-                className="mb-12"
-              >
-                <div className="lg:flex lg:items-start lg:gap-8 mb-4">
-                  <div className="lg:w-1/2">
-                    <h2 className="text-lg font-bold text-ink mb-3">
-                      {section.title.en}
-                    </h2>
-                    {section.blocks.en.map((block, bi) => (
-                      <div key={bi} className="mb-4">
-                        {block.length === 1 ? (
-                          <p className="text-base text-ink/70 leading-relaxed">
-                            {block[0]}
-                          </p>
-                        ) : (
-                          <ul className="space-y-2 text-base text-ink/70 leading-relaxed list-disc list-inside">
-                            {block.map((item, ii) => (
-                              <li key={ii}>{item}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    ))}
-                    <p className="mt-4 text-xs text-ink/50">
-                      <span className="font-semibold text-brand-pink">
-                        {t('learn.source')}:{' '}
-                      </span>
-                      {section.sources.map((sid, si) => {
-                        const src = sourceById.get(sid)
-                        if (!src) return null
-                        return (
-                          <>
-                            <a
-                              href={src.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-brand-pink underline underline-offset-2 hover:no-underline"
-                            >
-                              {src.label}
-                            </a>
-                            {si < section.sources.length - 1 && ', '}
-                          </>
-                        )
-                      })}
-                    </p>
+                </h2>
+                {section.blocks.en.map((block, bi) => (
+                  <div key={bi} className="mb-4">
+                    {block.length === 1 ? (
+                      <p className="text-base text-ink/70 leading-relaxed">
+                        {block[0]}
+                      </p>
+                    ) : (
+                      <ul className="space-y-2 text-base text-ink/70 leading-relaxed list-disc list-inside">
+                        {block.map((item, ii) => (
+                          <li key={ii}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  {sectionImages[section.id] && (
-                    <div className="lg:w-1/2">
-                      <img
-                        src={sectionImages[section.id].src}
-                        alt={sectionImages[section.id].alt}
-                        className="w-full max-w-md lg:max-w-none rounded-xl shadow-[0_8px_24px_rgba(236,106,143,0.25)] object-cover object-center"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  )}
-                </div>
-              </section>
-            ))}
-
-            {/* Sources section */}
-            <section id="sources" className="mb-8">
-              <h2 className="text-lg font-bold text-ink mb-3">
-                {t('learn.sourcesTitle')}
-              </h2>
-              <ol className="space-y-2 text-sm text-ink/70 list-decimal list-inside">
-                {LEARN_SOURCES.map((s) => (
-                  <li key={s.id} className="mb-2">
-                    <a
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-brand-pink underline underline-offset-2 hover:no-underline"
-                    >
-                      {s.label}
-                    </a>{' '}
-                    <span className="text-ink/50">(Accessed 2 Nov 2026)</span>
-                  </li>
                 ))}
-              </ol>
-              <p className="mt-4 text-xs text-ink/50 italic leading-relaxed">
-                {t('learn.disclaimer')}
-              </p>
-              <p className="text-xs text-ink/40 italic">
-                {t('learn.medicalReview')}
-              </p>
+                {sectionImages[section.id] && (
+                  <img
+                    src={sectionImages[section.id].src}
+                    alt={sectionImages[section.id].alt}
+                    className="w-full rounded-xl shadow-[0_8px_24px_rgba(236,106,143,0.25)] object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+                <p className="mt-4 text-xs text-ink/50">
+                  <span className="font-semibold text-brand-pink">
+                    {t('learn.source')}:{' '}
+                  </span>
+                  {section.sources.map((sid, si) => {
+                    const src = sourceById.get(sid)
+                    if (!src) return null
+                    return (
+                      <>
+                        <a
+                          href={src.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-pink underline underline-offset-2 hover:no-underline"
+                        >
+                          {src.label}
+                        </a>
+                        {si < section.sources.length - 1 && ', '}
+                      </>
+                    )
+                  })}
+                </p>
+              </div>
             </section>
+          ))}
 
-            {/* Action buttons */}
-            <div className="mt-8 grid gap-3">
-              <Link
-                to="/check"
-                className="min-h-12 rounded-xl flex items-center justify-center bg-brand-pink text-white font-semibold transition active:scale-95"
-              >
-                {t('learn.checkYourself')}
-              </Link>
-              <Link
-                to="/centres"
-                className="min-h-12 rounded-xl flex items-center justify-center border border-pink-border bg-white/60 text-brand-pink font-semibold transition hover:bg-pink-hover"
-              >
-                {t('learn.findCentre')}
-              </Link>
-            </div>
+          {/* Sources section */}
+          <section id="sources" className="mb-8">
+            <h2 className="text-lg font-bold text-ink mb-3">
+              {t('learn.sourcesTitle')}
+            </h2>
+            <ol className="space-y-2 text-sm text-ink/70 list-decimal list-inside">
+              {LEARN_SOURCES.map((s) => (
+                <li key={s.id} className="mb-2">
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-pink underline underline-offset-2 hover:no-underline"
+                  >
+                    {s.label}
+                  </a>{' '}
+                  <span className="text-ink/50">(Accessed 2 Nov 2026)</span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-4 text-xs text-ink/50 italic leading-relaxed">
+              {t('learn.disclaimer')}
+            </p>
+            <p className="text-xs text-ink/40 italic">
+              {t('learn.medicalReview')}
+            </p>
+          </section>
+
+          {/* Action buttons */}
+          <div className="mt-8 grid gap-3">
+            <Link
+              to="/check"
+              className="min-h-12 rounded-xl flex items-center justify-center bg-brand-pink text-white font-semibold transition active:scale-95"
+            >
+              {t('learn.checkYourself')}
+            </Link>
+            <Link
+              to="/centres"
+              className="min-h-12 rounded-xl flex items-center justify-center border border-pink-border bg-white/60 text-brand-pink font-semibold transition hover:bg-pink-hover"
+            >
+              {t('learn.findCentre')}
+            </Link>
           </div>
         </div>
       </div>
