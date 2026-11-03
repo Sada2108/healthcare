@@ -38,7 +38,7 @@ export default function Home() {
               <img
                 src="/10-things-about-breast-cancer-s2-what-is-breast-cancer.webp"
                 alt="Breast health awareness illustration"
-                className="w-full max-w-xs lg:max-w-none mt-6 lg:mt-0 mx-auto lg:mx-0 rounded-xl shadow-[0_8px_24px_rgba(236,106,143,0.25)]"
+                className="w-full max-w-[280px] lg:max-w-[360px] mt-6 lg:mt-0 mx-auto lg:mx-0 rounded-xl shadow-[0_8px_24px_rgba(236,106,143,0.25)]"
                 loading="lazy"
                 decoding="async"
               />
