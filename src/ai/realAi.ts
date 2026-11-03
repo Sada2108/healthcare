@@ -76,7 +76,7 @@ export async function getGuidance(input: {
   const timeoutId = setTimeout(() => controller.abort(), 10000)
 
   try {
-    const response = await fetch('/api/guidance', {
+    const response = await fetch('/api/groq', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

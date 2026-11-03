@@ -240,5 +240,25 @@
     "findCentre": "एक केंद्र खोजें",
     "pageTitle": "MammoCare के बारे में जानें",
     "onThisPage": "इस पेज पर"
+  },
+  "login": {
+    "title": "साइन इन करें",
+    "signIn": "साइन इन करें",
+    "signInWithGoogle": "गूगल से साइन इन करें",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "createAccount": "खाता बनाएं",
+    "signedInAs": "लॉग इन हैं: {{email}}",
+    "signOut": "साइन आउट करें",
+    "continue": "जारी रखें",
+    "loading": "साइन इन हो रहा है...",
+    "name": "नाम",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "errorWrongPassword": "गलत पासवर्ड। कृपया फिर से कोशिश करें।",
+    "errorEmailInUse": "इस ईमेल से पहले से एक खाता मौजूद है।",
+    "errorUserNotFound": "इस ईमेल से कोई खाता नहीं मिला।",
+    "errorInvalidEmail": "कृपया एक वैध ईमेल पता दर्ज करें।",
+    "errorNetwork": "नेटवर्क त्रुटि। बाद में फिर से कोशिश करें।",
+    "passwordResetSent": "पासवर्ड रीसेट लिंक आपके ईमेल पर भेज दिया गया है।"
   }
 }

@@ -24,14 +24,22 @@ export default function Home() {
         />
 
         <div className="relative z-10 pt-6 pb-8 lg:pt-10 lg:pb-0">
-          <div className="lg:flex lg:items-start lg:gap-8">
-            <div className="lg:w-1/2">
-              <h1 className="text-3xl lg:text-4xl font-bold text-ink leading-tight mb-4">
-                {t('home.heading')}
-              </h1>
+          <div className="lg:flex lg:items-start lg:gap-12">
+            <div className="lg:w-1/2 flex flex-col gap-6">
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/logo.svg" alt="MammoCare" className="w-6 h-6" />
+                <h1 className="text-3xl lg:text-4xl font-bold text-ink leading-tight">
+                  {t('home.heading')}
+                </h1>
+              </div>
               <p className="text-lg text-ink/70 leading-relaxed max-w-prose">
                 {t('home.subheading')}
               </p>
+              <img
+                src="/hero-illustration.svg"
+                alt="Breast health illustration"
+                className="w-full max-w-xs lg:max-w-none mt-6 lg:mt-0 mx-auto lg:mx-0"
+              />
             </div>
 
             <div className="lg:w-1/2 mt-6 lg:mt-0">

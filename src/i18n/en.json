@@ -240,5 +240,25 @@
     "findCentre": "Find a centre",
     "pageTitle": "Learn about MammoCare",
     "onThisPage": "On this page"
+  },
+  "login": {
+    "title": "Sign in",
+    "signIn": "Sign in",
+    "signInWithGoogle": "Sign in with Google",
+    "email": "Email",
+    "password": "Password",
+    "createAccount": "Create account",
+    "signedInAs": "Signed in as {{email}}",
+    "signOut": "Sign out",
+    "continue": "Continue",
+    "loading": "Signing in...",
+    "name": "Name",
+    "forgotPassword": "Forgot password?",
+    "errorWrongPassword": "Wrong password. Please try again.",
+    "errorEmailInUse": "An account with this email already exists.",
+    "errorUserNotFound": "No account found with this email.",
+    "errorInvalidEmail": "Please enter a valid email address.",
+    "errorNetwork": "Network error. Please try again later.",
+    "passwordResetSent": "Password reset link sent to your email."
   }
 }
