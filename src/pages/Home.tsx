@@ -35,7 +35,7 @@ export default function Home() {
             </div>
 
             <div className="lg:w-1/2 mt-6 lg:mt-0">
-              <nav className="grid grid-cols-2 gap-4">
+              <nav className="flex flex-col gap-4">
                 {cards.map((card) => {
                   const Icon = card.Icon
                   return (

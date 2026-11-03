@@ -1,4 +1,4 @@
-# Breast Health
+# MammoCare
 
 Breast health: from awareness to action.
 
@@ -65,7 +65,7 @@ Awareness does not always turn into screening and follow-up. This app guides wom
 | Variable | Required | Description |
 |---|---|---|
 | `GROQ_API_KEY` | Yes (for live AI) | Groq API key. Read only by the backend. Never commit it. Never use a `VITE_` prefix. |
-| `GROQ_MODEL` | No | Groq model name (default: `llama-3.1-8b-instant`) |
+| `GROQ_MODEL` | No | Groq model name (default: `qwen/qwen3.8-27b`) |
 | `PORT` | No | Backend port (default: `3001`) |
 
 The API key is read only by the backend (`server/index.js`) and is never sent to the browser. The frontend does not use any `VITE_` prefixed variables. `.env` is listed in `.gitignore` and must not be committed.

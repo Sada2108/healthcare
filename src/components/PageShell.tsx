@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useLocation, NavLink, Link } from 'react-router-dom'
+import { useLocation, useNavigate, Link, NavLink } from 'react-router-dom'
 import LanguageSelector from './LanguageSelector'
 import BottomNav from './BottomNav'
 
@@ -14,7 +14,17 @@ const NAV_LINKS: { path: string; label: string }[] = [
 export default function PageShell({ children }: { children: React.ReactNode }) {
   const { t } = useTranslation()
   const { pathname } = useLocation()
+  const navigate = useNavigate()
   const isChw = pathname.startsWith('/chw')
+  const isHome = pathname === '/'
+
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1)
+    } else {
+      navigate('/')
+    }
+  }
 
   return (
     <div className="flex min-h-dvh flex-col">
@@ -61,6 +71,18 @@ export default function PageShell({ children }: { children: React.ReactNode }) {
         </span>
         <LanguageSelector />
       </header>
+
+      {!isHome && (
+        <div className="px-4 lg:px-8 py-2">
+          <button
+            type="button"
+            onClick={handleBack}
+            className="flex items-center gap-1.5 min-h-11 px-4 py-2 text-sm text-brand-pink font-medium underline decoration-brand-pink/40 hover:no-underline"
+          >
+            ← {t('check.back')}
+          </button>
+        </div>
+      )}
 
       <main
         className={`mx-auto w-full max-w-6xl px-4 md:px-8 lg:px-10 flex-1 ${

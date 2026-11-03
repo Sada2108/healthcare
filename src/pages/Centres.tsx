@@ -49,7 +49,7 @@ export default function Centres() {
           <div>
             <h2 className="text-lg font-bold text-ink">{t('centres.title')}</h2>
             <p className="text-xs text-ink/40 italic mb-3">
-              {t('centres.demoData')}
+              {t('centres.timingsChange')}
             </p>
           </div>
         </div>

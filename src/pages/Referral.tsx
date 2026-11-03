@@ -29,6 +29,14 @@ const STEP_DATES: Record<ReferralStep, string> = {
   'Follow-up': 'referral.followUpOn',
 }
 
+const STEP_DESC: Record<ReferralStep, string> = {
+  Referred: 'referral.stepDesc.Referred',
+  Booked: 'referral.stepDesc.Booked',
+  Screened: 'referral.stepDesc.Screened',
+  Result: 'referral.stepDesc.Result',
+  'Follow-up': 'referral.stepDesc.Follow-up',
+}
+
 export default function Referral() {
   const { t } = useTranslation()
   const location = useLocation()
@@ -44,6 +52,9 @@ export default function Referral() {
     <PageShell>
       <div className="space-y-6 lg:space-y-8">
         <h2 className="text-lg lg:text-xl font-bold text-ink">{t('referral.title')}</h2>
+        <p className="text-sm text-ink/70 leading-relaxed max-w-prose">
+          {t('referral.trackLine')}
+        </p>
 
         {/* Two columns at lg+ */}
         <div className="lg:flex lg:gap-8">
@@ -130,6 +141,9 @@ export default function Referral() {
                         <p className={`text-sm font-medium ${
                           active ? 'text-ink' : 'text-ink/60'
                         }`}>{t(STEP_LABELS[s])}</p>
+                        <p className="text-xs text-ink/50">
+                          {t(STEP_DESC[s])}
+                        </p>
                         {date && (
                           <p className="text-xs text-ink/40">
                             {t(STEP_DATES[s])}: {date}

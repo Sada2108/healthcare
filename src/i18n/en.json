@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "Breast Health",
+    "name": "MammoCare",
     "privacyLine": "Your answers are private.",
     "forHealthWorkers": "For health workers",
     "language": "Language"
@@ -196,7 +196,6 @@
     "cardTitle": "What this could mean"
   },
   "centres": {
-    "demoData": "Demo data — fictional centres and phone numbers.",
     "title": "Find Centre",
     "list": "List",
     "map": "Map",
@@ -206,13 +205,29 @@
     "notVerified": "Not verified",
     "call": "Call",
     "chooseCentre": "Choose this centre",
-    "centre": "Centre"
+    "centre": "Centre",
+    "timingsChange": "Timings and costs can change. Please call before you visit."
   },
   "referral": {
     "pending": "Pending",
     "title": "My Referral",
     "nextStep": "Next step",
-    "complete": "Go to referral"
+    "complete": "Go to referral",
+    "trackLine": "Track your journey from referral to screening and follow-up.",
+    "steps": {
+      "Referred": "Referred",
+      "Booked": "Appointment Booked",
+      "Screened": "Screening Done",
+      "Result": "Result Received",
+      "Follow-up": "Follow-up"
+    },
+    "stepDesc": {
+      "Referred": "Your referral has been sent to the centre.",
+      "Booked": "Your appointment has been booked.",
+      "Screened": "You have been screened at the centre.",
+      "Result": "Your screening result is ready.",
+      "Follow-up": "Follow-up visit scheduled."
+    }
   },
   " ": " ",
   "learn": {
@@ -223,7 +238,7 @@
     "medicalReview": "Medical review: pending.",
     "checkYourself": "Check Yourself",
     "findCentre": "Find a centre",
-    "pageTitle": "Learn about breast health",
+    "pageTitle": "Learn about MammoCare",
     "onThisPage": "On this page"
   }
 }
