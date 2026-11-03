@@ -37,8 +37,9 @@ export default function Home() {
               </p>
               <img
                 src="/hero-illustration.svg"
-                alt="Breast health illustration"
-                className="w-full max-w-xs lg:max-w-none mt-6 lg:mt-0 mx-auto lg:mx-0"
+                alt="Illustration of breast health awareness"
+                className="w-full max-w-xs lg:max-w-none mt-6 lg:mt-0 mx-auto lg:mx-0 rounded-xl shadow-[0_8px_24px_rgba(236,106,143,0.25)]"
+                loading="lazy"
               />
             </div>
 

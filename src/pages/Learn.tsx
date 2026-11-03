@@ -6,6 +6,25 @@ import PageShell from '../components/PageShell'
 
 const sourceById = new Map(LEARN_SOURCES.map((s) => [s.id, s]))
 
+const sectionImages: Record<string, { src: string; alt: string }> = {
+  'about-breast-cancer': {
+    src: '/10-things-about-breast-cancer-s2-what-is-breast-cancer.webp',
+    alt: 'Illustration of breast cancer awareness and education',
+  },
+  'normal-breasts': {
+    src: '/Lobules_and_ducts_of_the_breast.jpg',
+    alt: 'Diagram of lobules and ducts in breast tissue',
+  },
+  'warning-signs': {
+    src: '/blog-breast-symptoms.webp',
+    alt: 'Illustration of breast cancer warning signs and symptoms',
+  },
+  'when-to-see-a-doctor': {
+    src: '/eh-symptoms-of-early-breast-cancer-seo-graphicddfbff18-eb70-43a6-80e6-8ea838900032.webp',
+    alt: 'Early breast cancer warning signs and when to seek care',
+  },
+}
+
 export default function Learn() {
   const { t } = useTranslation()
   const [activeId, setActiveId] = useState<string | null>(LEARN_SECTIONS[0]?.id ?? null)
@@ -100,46 +119,61 @@ export default function Learn() {
                 ref={registerRef(section.id)}
                 className="mb-12"
               >
-                <h2 className="text-lg font-bold text-ink mb-3">
-                  {section.title.en}
-                </h2>
-                {section.blocks.en.map((block, bi) => (
-                  <div key={bi} className="mb-4">
-                    {block.length === 1 ? (
-                      <p className="text-base text-ink/70 leading-relaxed">
-                        {block[0]}
-                      </p>
-                    ) : (
-                      <ul className="space-y-2 text-base text-ink/70 leading-relaxed list-disc list-inside">
-                        {block.map((item, ii) => (
-                          <li key={ii}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-                <p className="mt-4 text-xs text-ink/50">
-                  <span className="font-semibold text-brand-pink">
-                    {t('learn.source')}:{' '}
-                  </span>
+                <div className="lg:flex lg:items-start lg:gap-8 mb-4">
+                  <div className="lg:w-1/2">
+                    <h2 className="text-lg font-bold text-ink mb-3">
+                      {section.title.en}
+                    </h2>
+                    {section.blocks.en.map((block, bi) => (
+                      <div key={bi} className="mb-4">
+                        {block.length === 1 ? (
+                          <p className="text-base text-ink/70 leading-relaxed">
+                            {block[0]}
+                          </p>
+                        ) : (
+                          <ul className="space-y-2 text-base text-ink/70 leading-relaxed list-disc list-inside">
+                            {block.map((item, ii) => (
+                              <li key={ii}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                    <p className="mt-4 text-xs text-ink/50">
+                      <span className="font-semibold text-brand-pink">
+                        {t('learn.source')}:{' '}
+                      </span>
                       {section.sources.map((sid, si) => {
-                    const src = sourceById.get(sid)
-                    if (!src) return null
-                    return (
-                      <>
-                        <a
-                          href={src.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-brand-pink underline underline-offset-2 hover:no-underline"
-                        >
-                          {src.label}
-                        </a>
-                        {si < section.sources.length - 1 && ', '}
-                      </>
-                    )
-                  })}
-                </p>
+                        const src = sourceById.get(sid)
+                        if (!src) return null
+                        return (
+                          <>
+                            <a
+                              href={src.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-brand-pink underline underline-offset-2 hover:no-underline"
+                            >
+                              {src.label}
+                            </a>
+                            {si < section.sources.length - 1 && ', '}
+                          </>
+                        )
+                      })}
+                    </p>
+                  </div>
+                  {sectionImages[section.id] && (
+                    <div className="lg:w-1/2">
+                      <img
+                        src={sectionImages[section.id].src}
+                        alt={sectionImages[section.id].alt}
+                        className="w-full max-w-md lg:max-w-none rounded-xl shadow-[0_8px_24px_rgba(236,106,143,0.25)] object-cover object-center"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  )}
+                </div>
               </section>
             ))}
 
